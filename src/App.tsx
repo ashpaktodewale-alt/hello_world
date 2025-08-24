@@ -498,7 +498,7 @@ function App() {
               {/* Final apology line */}
               <section className="mt-14 text-center">
                 <p className="font-handwriting text-2xl text-pink-700">
-                  P.S. Sorry once again, and haa sorry need change — I know you will see soon. 💗
+                  P.S. Sorry once again see you soon. take care 💗
                 </p>
               </section>
             </main>
