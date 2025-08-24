@@ -1,0 +1,106 @@
+/* Animated Gradient Background for the Overlay */
+.envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 1s ease;
+  }
+  
+  .envelope-overlay.fade-out {
+    opacity: 0;
+  }
+  
+  /* Envelope Container */
+  .envelope {
+    width: 400px;
+    height: 250px;
+    perspective: 1500px;
+    position: relative;
+  }
+  
+  /* Envelope Flap (Top) */
+  .envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(135deg, #ffcccb, #f48fb1);
+    border: 3px solid #f06292;
+    border-bottom: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transform-origin: top;
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  }
+  
+  /* Open state rotates the flap */
+  .envelope.open .envelope-flap {
+    transform: rotateX(-180deg);
+  }
+  
+  /* Envelope Body (Bottom) */
+  .envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    border: 3px solid #f06292;
+    border-top: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Stamp Element (Heart) */
+  .envelope-body::after {
+    content: "❤️";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 32px;
+  }
+  
+  /* Envelope Text */
+  .envelope-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
+    color: #d81b60;
+    text-shadow: 1px 1px 2px #fff;
+  }
+  
+  /* Fade in Animation for Main Content */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Gradient Animation Keyframes */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
